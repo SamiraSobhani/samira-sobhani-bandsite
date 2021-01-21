@@ -1,0 +1,36 @@
+
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-family:AvenirNext LT Pro, sans-serif;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: $white;
+}
+a:hover {
+  text-decoration: none;
+  border-bottom: 0.5rem solid $white;
+
+}
+
+.page-head {
+  background-color: $black;
+  color: $white;
+}
+ul {
+  list-style: none;
+}
+h2{
+  font-size: 1.5rem;
+  font-weight: bold;
+}

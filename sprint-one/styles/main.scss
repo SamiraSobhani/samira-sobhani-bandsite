@@ -1,0 +1,137 @@
+@import "./partials/font";
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/general";
+
+.logo{
+  margin-top: 0.6rem;
+}
+.page-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+.nav__list {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  &__item{
+    display: flex;
+  }
+}
+
+.banner{
+  background-image: url(../ignored/assets/Images/anthony-delanoix-hzgs56Ze49s-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 11.43rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  &__text{
+  margin: 0;
+  text-shadow: 0.1rem 0.1rem $black;
+  color: $white;
+  width:65%;
+  height:auto;
+  margin-left: 1rem;
+  }
+}
+.container {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.about{
+
+  &__header{
+    margin-top:2rem;
+    margin-bottom:1.5rem ;
+  
+  
+  }
+  &__top{
+    margin-top:1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4rem;
+  }
+  &__mid{
+    margin-bottom:2.5rem ;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  &__bottom{
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  &__content{
+    font-size:0.81rem ;
+    line-height:1.12rem ;
+    
+  }
+  &__second{
+    margin-bottom: 2.5rem;
+  }
+}
+.gallery{
+background-color: $lightgray;
+&__header{
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+&__img{
+  margin-bottom:1rem ;
+  width: 100%;
+  height: auto;
+}
+&__imgs{
+  padding-bottom: 0.9rem;
+}
+}
+
+.footer {
+  background-color: $black;
+  color: $white;
+  padding-left: 0.87rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  &__head{
+    padding-top: 2.5rem;
+   font-size: 2.2rem;
+   margin-top: 0;
+  }
+  &__icons{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+  }
+}
+.contactinfo{
+    font-size: 0.87rem;
+    font-weight: normal;
+
+  &__name{
+margin-bottom: 0;
+
+  }
+  &__title{
+margin-top: 0;
+  }
+  &__address{
+    font-size: 0.73rem;
+    font-weight: lighter;
+  }
+  &__email{
+    font-size: 0.73rem;
+    font-weight: lighter;
+    padding-top:1rem ;
+    padding-bottom: 1rem;
+  }
+  }
+  .footer__copyright{
+    font-size: 0.73rem;
+    font-weight: lighter;
+  }
