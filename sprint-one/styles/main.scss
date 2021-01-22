@@ -3,24 +3,73 @@
 @import "./partials/mixins";
 @import "./partials/general";
 
-.logo{
-  margin-top: 0.6rem;
+.logo {
+  padding-top: 0.9rem;
+
+  @include tablet {
+    width: 20%;
+    height: auto;
+    padding-right: 2rem;
+  }
 }
+
 .page-head {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  }
-.nav__list {
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-  &__item{
-    display: flex;
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 5rem;
   }
 }
 
-.banner{
+.active {
+  text-decoration: none;
+  border-bottom: 0.3rem solid $white;
+  color: $white;
+  width: 50%;
+
+}
+
+.nav {
+  @include tablet {
+    display: flex;
+    padding-right: 2rem;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    padding-top: 1rem;
+    @include tablet {
+      padding-top: 2.4rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding-bottom: 0.62rem;
+    width: 50%;
+    @include tablet {
+      padding-bottom: 1.5rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    margin: 0 auto;
+  }
+}
+
+.inactive {
+  padding-left: 4rem;
+}
+
+.banner {
   background-image: url(../ignored/assets/Images/anthony-delanoix-hzgs56Ze49s-unsplash.jpg);
   background-size: cover;
   background-position: center;
@@ -28,110 +77,247 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  &__text{
-  margin: 0;
-  text-shadow: 0.1rem 0.1rem $black;
-  color: $white;
-  width:65%;
-  height:auto;
-  margin-left: 1rem;
+  @include tablet {
+    height: 25rem;
+  }
+
+  &__text {
+    margin: 0;
+    text-shadow: 0.1rem 0.1rem $black;
+    color: $white;
+    width: 65%;
+    height: auto;
+    margin-left: 1rem;
+    @include tablet {
+      font-size: 3.75rem;
+    }
   }
 }
+
 .container {
   margin-right: 1rem;
   margin-left: 1rem;
+  @include tablet {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
 }
 
-.about{
-
-  &__header{
-    margin-top:2rem;
-    margin-bottom:1.5rem ;
-  
-  
+.about {
+  &__img {
+    width: 100%;
+    height: auto;
+    @include tablet {
+      height: 22.62rem;
+      object-fit: cover;
+    }
   }
-  &__top{
-    margin-top:1.5rem;
+
+  &__header {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__top {
+    margin-top: 1.5rem;
     margin-bottom: 2rem;
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.4rem;
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
-  &__mid{
-    margin-bottom:2.5rem ;
+
+  &__mid {
+    margin-bottom: 2.5rem;
     font-size: 0.85rem;
     font-weight: 600;
+    @include tablet {
+      font-size: 1rem;
+    }
   }
-  &__bottom{
+
+  &__bottom {
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
     font-weight: 600;
+    @include tablet {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
   }
-  &__content{
-    font-size:0.81rem ;
-    line-height:1.12rem ;
-    
+}
+
+.about {
+  &__content {
+    font-size: 0.81rem;
+    line-height: 1.12rem;
+    @include tablet {
+      font-size: 0.87rem;
+      line-height: 1.37rem;
+      display: flex;
+      padding-bottom: 1.7rem;
+    }
   }
-  &__second{
+
+  &__second {
     margin-bottom: 2.5rem;
+    @include tablet {
+      margin-left: 1.5rem;
+      margin-bottom: 0;
+    }
   }
 }
-.gallery{
-background-color: $lightgray;
-&__header{
-  padding-top: 2rem;
-  margin-bottom: 1.5rem;
-}
-&__img{
-  margin-bottom:1rem ;
-  width: 100%;
-  height: auto;
-}
-&__imgs{
-  padding-bottom: 0.9rem;
-}
+
+.gallery {
+  background-color: $lightgray;
+  &__header {
+    padding-top: 2rem;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      margin: 0;
+      font-size: 2.25rem;
+      padding-top: 3rem;
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  &__imgs {
+    padding-bottom: 0.9rem;
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__img {
+    padding-bottom: 1rem;
+    width: 100%;
+    height: auto;
+    @include tablet {
+      width: 14rem;
+      height: 7.875rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
 }
 
 .footer {
   background-color: $black;
   color: $white;
-  padding-left: 0.87rem;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-  &__head{
-    padding-top: 2.5rem;
-   font-size: 2.2rem;
-   margin-top: 0;
+  padding:0.5rem 0 2rem 0;
+  margin-left: -0.35rem;
+  @include tablet{
+    padding:0;
+    margin: 0;
   }
-  &__icons{
+  &__top{
+    @include tablet{
+    padding-top: 0.6rem;
+    padding-bottom: 0.5rem;
+    display:flex;
+    justify-content: space-between;
+    }
+  }
+
+  &__head {
+    padding-top: 2.5rem;
+    font-size: 2.25rem;
+    margin: 0;
+    padding-bottom: 1.3rem;
+  
+  }
+
+  &__icons {
     display: flex;
     justify-content: space-between;
     width: 40%;
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
+    padding-left:0.4rem;
+    @include tablet{
+      align-items: center;
+      padding-bottom: 0;
+      padding-top: 1rem;
+      
+      width: 20%
+    }
   }
 }
-.contactinfo{
-    font-size: 0.87rem;
-    font-weight: normal;
 
-  &__name{
-margin-bottom: 0;
+.footer{
+  &__content{
+  @include tablet{
+    display: flex;
+  }
+ }
+  &__logo{
+    display: none;
+    @include tablet{
+      display: unset;
+      width: 35%;
+      position: relative;
+    }
+  }
+  &__brand{
+    @include tablet{
+      position: absolute;
+      bottom: 2.5rem;
+      right: 0.5rem;
+    }
+  }
+}
 
+
+.contactinfo {
+  font-size: 0.87rem;
+  font-weight: normal;
+  @include tablet{
+    font-size: 1rem;
   }
-  &__title{
-margin-top: 0;
+
+  &__name {
+    margin-bottom: 0;
   }
-  &__address{
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__address {
     font-size: 0.73rem;
     font-weight: lighter;
+    @include tablet{
+      font-size: 0.9rem;
+    }
   }
-  &__email{
+
+  &__email {
     font-size: 0.73rem;
     font-weight: lighter;
-    padding-top:1rem ;
+    padding-top: 1rem;
     padding-bottom: 1rem;
+    @include tablet{
+      font-size: 00.9rem;
+    
+    }
   }
+}
+
+.footer__copyright {
+  font-size: 0.73rem;
+  font-weight: lighter;
+  width: 57%;
+  line-height: 1.2rem;
+  @include tablet{
+    font-size: 0.9rem;
+    padding-bottom: 3rem;
   }
-  .footer__copyright{
-    font-size: 0.73rem;
-    font-weight: lighter;
-  }
+}
