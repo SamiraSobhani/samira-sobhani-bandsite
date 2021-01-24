@@ -295,17 +295,21 @@
   }
 
   &__img {
-    @include colorful;
-    filter: grayscale(100%);
+    // ****no hover event on mob*****
     padding-bottom: 1rem;
     width: 100%;
     @include tablet {
       width: 14rem;
       padding-bottom: 1.5rem;
+      filter: grayscale(100%);
+      @include colorful;
+
     }
     @include desk {
       width: 21.5rem;
       height: auto;
+      filter: grayscale(100%);
+      @include colorful;
 
     }
   }
