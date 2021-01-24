@@ -11,22 +11,28 @@
     margin-left: 1.5rem;
   }
   @include desk {
-    margin-right:11.25rem ;
+    margin-right: 11.25rem;
     margin-left: 11.25rem;
   }
 }
-.logo {
-  padding-top: 0.9rem;
 
+// *****************navbar*******************
+
+.logo {
+  padding-top: 0.4rem;
+  text-align: center;
   @include tablet {
+    display: flex;
+    align-items: center;
     padding-right: 2rem;
   }
-  @include desk{
+  @include desk {
     margin-right: 1.5rem;
   }
 }
 
 .page-head {
+  height: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,10 +44,12 @@
 }
 
 .active {
+  @include hover-nav;
   text-decoration: none;
   border-bottom: 0.3rem solid $white;
   color: $white;
   width: 50%;
+  text-align: center;
 }
 
 .nav {
@@ -54,61 +62,74 @@
     margin: 0;
     padding-left: 0;
     display: flex;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     @include tablet {
-      padding-top: 2.4rem;
+      padding-top: 1.9rem;
     }
   }
 
   &__item {
-    display: flex;
-    padding-bottom: 0.62rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     width: 50%;
     @include tablet {
+      width: unset;
       padding-bottom: 1.5rem;
+    }
+    @include desk {
+      width: 5rem;
     }
   }
 
   &__link {
     font-size: 0.86rem;
     margin: 0 auto;
-
   }
 }
 
 .inactive {
-  padding-left: 4rem;
-  @include desk{
-    padding-left: 3.5rem;
+  @include hover-nav;
+  text-align: center;
+  @include tablet {
+    margin-left: 5rem;
+  }
+  @include desk {
+    margin-left: 3.5rem;
   }
 }
+
+// ******************banner******************
+
 
 .banner {
   background-image: url(../ignored/assets/Images/anthony-delanoix-hzgs56Ze49s-unsplash.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 11.43rem;
+  height: 183px;
   display: flex;
   justify-content: left;
   align-items: center;
   @include tablet {
     height: 25rem;
   }
-  @include desk{
+  @include desk {
     height: 41.875rem;
   }
 
   &__text {
     text-shadow: 0.1rem 0.1rem $black;
     color: $white;
-      @include tablet {
+    @include tablet {
       font-size: 3.75rem;
     }
   }
 }
-.secondcontainer{
-  @include desk{
+
+// *****************main*******************
+
+.secondcontainer {
+  @include desk {
     margin: 0 auto;
     width: 56rem;
   }
@@ -116,17 +137,22 @@
 
 .about {
   &__img {
-    width: 100%;
+    width: 18rem;
     height: auto;
-    @include tablet {
-      height: 22.62rem;
+    @include between {
+      width: 100%;
       object-fit: cover;
     }
-    @include desk{
+    @include tablet {
+      width: 45rem;
+      height: 22.625rem;
+      object-fit: cover;
+    }
+    @include desk {
       width: 56rem;
       height: 28.125rem;
-     display: flex;
-     justify-content: center;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -135,46 +161,54 @@
     margin-bottom: 1.5rem;
     @include tablet {
       font-size: 2.25rem;
+      margin-top: 3rem;
     }
-    @include desk{
+    @include desk {
       padding-top: 3rem;
       padding-bottom: 3rem;
       margin: 0;
     }
   }
+}
 
+.about {
   &__top {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-top: -6px;
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.4rem;
     @include tablet {
+      margin-top: 0;
+      padding-top: 2rem;
       font-size: 1.5rem;
       line-height: 2rem;
     }
-    @include desk{
-      padding-top: 1.5rem;
+    @include desk {
+      padding-top: 3rem;
+      padding-bottom: 2.5rem;
       margin-bottom: 0;
-      
     }
   }
 
   &__mid {
+    margin-top: 0;
     margin-bottom: 2.5rem;
     font-size: 0.85rem;
     font-weight: 600;
     @include tablet {
       font-size: 1rem;
     }
-    @include desk{
-      margin-bottom:0;
-      padding-top:2.5rem ;
-      padding-bottom:3.5rem ;
+    @include desk {
+      margin-bottom: 0;
+      padding-bottom: 3.5rem;
     }
   }
 
   &__bottom {
+    margin-top: 0;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
     font-weight: 600;
@@ -182,9 +216,8 @@
       font-size: 1.5rem;
       margin-bottom: 0;
     }
-    @include desk{
+    @include desk {
       padding-bottom: 2rem;
-      
     }
   }
 }
@@ -197,16 +230,18 @@
       font-size: 0.87rem;
       line-height: 1.37rem;
       display: flex;
-      padding-bottom: 1.7rem;
+      padding-bottom: 0.7rem;
+      margin-top: 0.5rem;
     }
-    @include desk{
-      
+    @include desk {
+      margin-top: 0;
       padding-bottom: 3rem;
-      
     }
   }
-  &__first{
-    @include desk{
+
+  &__first {
+    margin-bottom: 1.5rem;
+    @include desk {
       margin: 0;
       width: 420px;
       margin-right: 1.25rem;
@@ -219,7 +254,7 @@
       margin-left: 1.5rem;
       margin-bottom: 0;
     }
-    @include desk{
+    @include desk {
       margin: 0;
       width: 420px;
       margin-left: 1.25rem;
@@ -227,12 +262,15 @@
   }
 }
 
+// ****************gallery*********************
 
 .gallery {
   background-color: $lightgray;
+
   &__header {
+    margin: 0;
     padding-top: 2rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
     @include tablet {
       margin: 0;
       font-size: 2.25rem;
@@ -243,55 +281,58 @@
 
   &__imgs {
     padding-bottom: 0.9rem;
+    line-height: 0;
     @include tablet {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-    @include desk{
+    @include desk {
       padding-top: 1.5rem;
-      width: 1080px;//344px*3+24px*2
+      width: 1080px; //344px*3+24px*2
       padding-bottom: 1rem;
     }
   }
 
   &__img {
+    @include colorful;
+    filter: grayscale(100%);
     padding-bottom: 1rem;
     width: 100%;
-    height: auto;
     @include tablet {
       width: 14rem;
-      
       padding-bottom: 1.5rem;
     }
-    @include desk{
+    @include desk {
       width: 21.5rem;
       height: auto;
-      
+
     }
   }
 
 }
 
+// *****************footer********************
+
 .footer {
   background-color: $black;
   color: $white;
-  padding:0.5rem 0 2rem 0;
+  padding: 0.5rem 0 2rem 0;
   margin-left: -0.35rem;
-  @include tablet{
-    padding:0;
+  @include tablet {
+    padding: 0;
     margin: 0;
   }
-  &__top{
-    @include tablet{
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    display:flex;
-    justify-content: space-between;
+
+  &__top {
+    @include tablet {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
     }
-    @include desk{
+    @include desk {
       padding-bottom: 2.25rem;
-      
     }
   }
 
@@ -300,7 +341,7 @@
     font-size: 2.25rem;
     margin: 0;
     padding-bottom: 1.25rem;
-    @include desk{
+    @include desk {
       position: relative;
     }
   }
@@ -311,88 +352,93 @@
     width: 40%;
     margin-bottom: 0;
     padding-bottom: 1.5rem;
-    padding-left:0.4rem;
-    @include tablet{
+    padding-left: 0.4rem;
+    @include tablet {
       align-items: center;
       padding-bottom: 0;
       padding-top: 1rem;
       width: 20%
     }
-    @include desk{
+    @include desk {
       width: unset;
       position: absolute;
       left: 430px;
       margin-top: 1.87rem;
     }
   }
-  &__icon{
-    @include desk{
+
+  &__icon {
+    @include desk {
       padding-right: 1rem;
       padding-left: 1rem;
     }
   }
 }
 
-.footer{
-  &__content{
-  @include tablet{
-    display: flex;
-    justify-content: space-between;
+.footer {
+  &__content {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include desk {
+      width: 53%;
+    }
   }
-  @include desk{
-    width: 53%;
-  }
- }
-  &__logo{
+
+  &__logo {
     display: none;
-    @include tablet{
+    @include tablet {
       display: unset;
       width: 35%;
       position: relative;
     }
 
   }
-  &__brand{
-    @include tablet{
+
+  &__brand {
+    @include tablet {
       position: absolute;
       bottom: 2.5rem;
-      right: 0.5rem;
+      right: 0.2rem;
     }
-    @include desk{
-      width:7.5rem ;
+    @include desk {
+      width: 7.5rem;
       height: 1.5rem;
     }
   }
 }
 
-
 .contactinfo {
   font-size: 0.87rem;
   font-weight: normal;
-  @include tablet{
+  @include tablet {
     font-size: 1rem;
     width: 14rem;
   }
 
   &__name {
     margin-bottom: 0;
-    @include desk{
+    @include desk {
       margin-top: 0;
     }
   }
 
   &__title {
     margin-top: 0;
-    @include desk{
+    @include desk {
       margin-bottom: 1.5rem;
     }
   }
 
   &__address {
-    font-size: 0.73rem;
+    font-size: 0.76rem;
     font-weight: lighter;
-    @include tablet{
+    @include tablet {
       font-size: 0.9rem;
+    }
+    @include desk {
+      margin: 0;
     }
   }
 
@@ -401,11 +447,10 @@
     font-weight: lighter;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    @include tablet{
+    @include tablet {
       font-size: 00.9rem;
-    
     }
-    @include desk{
+    @include desk {
       margin-bottom: 1.5rem;
     }
   }
@@ -416,7 +461,7 @@
   font-weight: lighter;
   width: 57%;
   line-height: 1.2rem;
-  @include tablet{
+  @include tablet {
     font-size: 0.9rem;
     padding-bottom: 3rem;
   }
