@@ -100,7 +100,6 @@
 
 // ******************banner******************
 
-
 .banner {
   background-image: url(../ignored/assets/Images/anthony-delanoix-hzgs56Ze49s-unsplash.jpg);
   background-size: cover;
@@ -303,17 +302,14 @@
       padding-bottom: 1.5rem;
       filter: grayscale(100%);
       @include colorful;
-
     }
     @include desk {
       width: 21.5rem;
       height: auto;
       filter: grayscale(100%);
       @include colorful;
-
     }
   }
-
 }
 
 // *****************footer********************
@@ -361,7 +357,7 @@
       align-items: center;
       padding-bottom: 0;
       padding-top: 1rem;
-      width: 20%
+      width: 20%;
     }
     @include desk {
       width: unset;
@@ -397,7 +393,6 @@
       width: 35%;
       position: relative;
     }
-
   }
 
   &__brand {

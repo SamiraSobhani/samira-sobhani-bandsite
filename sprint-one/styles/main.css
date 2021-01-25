@@ -245,10 +245,10 @@ h2 {
 .active:active, .active:hover, .active:focus {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
-  background: gray;
+  background: #5d5d5d;
   border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 4px 1px white;
-          box-shadow: 1px 1px 4px 1px white;
+  -webkit-box-shadow: 1px 1px 4px 0px #a3a2a2;
+          box-shadow: 1px 1px 4px 0px #a3a2a2;
 }
 
 @media (min-width: 768px) {
@@ -308,10 +308,10 @@ h2 {
 .inactive:active, .inactive:hover, .inactive:focus {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
-  background: gray;
+  background: #5d5d5d;
   border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 4px 1px white;
-          box-shadow: 1px 1px 4px 1px white;
+  -webkit-box-shadow: 1px 1px 4px 0px #a3a2a2;
+          box-shadow: 1px 1px 4px 0px #a3a2a2;
 }
 
 @media (min-width: 768px) {
