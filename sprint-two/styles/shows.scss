@@ -1,0 +1,344 @@
+@import "./partials/font";
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/general";
+
+.container {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  @include tablet {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  @include desk {
+    margin-right: 11.25rem;
+    margin-left: 11.25rem;
+  }
+}
+
+// *****************navbar*******************
+
+.logo {
+  padding-top: 0.4rem;
+  text-align: center;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+  }
+  @include desk {
+    margin-right: 1.5rem;
+  }
+}
+
+.page-head {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 5rem;
+  }
+}
+
+.active {
+  @include hover-nav;
+  text-decoration: none;
+  border-bottom: 0.3rem solid $white;
+  color: $white;
+  width: 50%;
+  text-align: center;
+}
+
+.nav {
+  @include tablet {
+    display: flex;
+    padding-right: 2rem;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    padding-top: 0.5rem;
+    @include tablet {
+      padding-top: 1.9rem;
+    }
+  }
+
+  &__item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 50%;
+    @include tablet {
+      width: unset;
+      padding-bottom: 1.5rem;
+    }
+    @include desk {
+      width: 5rem;
+    }
+  }
+
+  &__link {
+    font-size: 0.86rem;
+    margin: 0 auto;
+  }
+}
+
+.inactive {
+  @include hover-nav;
+  text-align: center;
+  @include tablet {
+    margin-left: 5rem;
+  }
+  @include desk {
+    margin-left: 3.5rem;
+  }
+}
+// *****************banner********************
+
+.banner {
+  background-image: url(../assets/Images/girl.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  // object-fit: cover;
+  height: 29.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    align-self: flex-start;
+    color: $white;
+    margin-top: 0;
+    padding-top: 3.7rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-shadow: 0rem 0.1rem 0.1rem black;
+  }
+  &__text {
+    align-self: flex-start;
+    color: $white;
+    text-shadow: 0.5rem 0.5rem 0.4rem black;
+    font-size: 2.2rem;
+    line-height: 3.1rem;
+    margin-top: 0;
+  }
+  &__song {
+    width: 90%;
+    height: 20%;
+    margin-top: 1rem;
+  }
+}
+// ******************main*********************
+.show {
+  &__head {
+    padding-top: 0.9rem;
+    margin-bottom: 0.7rem;
+  }
+  &__list {
+    padding-left: 0;
+  }
+  &__labelD {
+    @include showLabel;
+    margin-bottom: 0.3rem;
+    margin-top: 1.4rem;
+  }
+  &__date {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.3rem;
+  }
+}
+
+.show {
+  &__labelV {
+    @include showLabel;
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+  }
+  &__venue {
+    font-size: 0.76rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  &__labelL {
+    @include showLabel;
+    margin-bottom: 0;
+  }
+  &__location {
+    font-size: 0.76rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+  }
+  &__button {
+    background-color: $black;
+    padding: 1rem;
+    color: $white;
+    width: 100%;
+    border-radius: 0.2rem;
+    border-style: none;
+    margin-bottom: 1rem;
+  }
+  &__divider {
+    border-bottom: solid 0.15rem $Mercury;
+  }
+}
+// *****************footer********************
+
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 0.5rem 0 2rem 0;
+  margin-left: -0.35rem;
+  margin-top: 2.3rem;
+  @include tablet {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__top {
+    @include tablet {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    @include desk {
+      padding-bottom: 2.25rem;
+    }
+  }
+
+  &__head {
+    padding-top: 2.5rem;
+    font-size: 2.25rem;
+    margin: 0;
+    padding-bottom: 1.25rem;
+    @include desk {
+      position: relative;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 0;
+    padding-bottom: 1.5rem;
+    padding-left: 0.4rem;
+    @include tablet {
+      align-items: center;
+      padding-bottom: 0;
+      padding-top: 1rem;
+      width: 20%;
+    }
+    @include desk {
+      width: unset;
+      position: absolute;
+      left: 430px;
+      margin-top: 1.87rem;
+    }
+  }
+
+  &__icon {
+    @include desk {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.footer {
+  &__content {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include desk {
+      width: 53%;
+    }
+  }
+
+  &__logo {
+    display: none;
+    @include tablet {
+      display: unset;
+      width: 35%;
+      position: relative;
+    }
+  }
+
+  &__brand {
+    @include tablet {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 0.2rem;
+    }
+    @include desk {
+      width: 7.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+.contactinfo {
+  font-size: 0.87rem;
+  font-weight: normal;
+  @include tablet {
+    font-size: 1rem;
+    width: 14rem;
+  }
+
+  &__name {
+    margin-bottom: 0;
+    font-weight: 500;
+    @include desk {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    @include desk {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__address {
+    font-size: 0.76rem;
+    font-weight: lighter;
+    @include tablet {
+      font-size: 0.9rem;
+    }
+    @include desk {
+      margin: 0;
+    }
+  }
+
+  &__email {
+    font-size: 0.73rem;
+    font-weight: lighter;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @include tablet {
+      font-size: 00.9rem;
+    }
+    @include desk {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.footer__copyright {
+  font-size: 0.73rem;
+  font-weight: lighter;
+  width: 57%;
+  line-height: 1.2rem;
+  @include tablet {
+    font-size: 0.9rem;
+    padding-bottom: 3rem;
+  }
+}
