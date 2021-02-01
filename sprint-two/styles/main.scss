@@ -369,6 +369,7 @@
     display: none;
     @include tablet {
       display: unset;
+      margin-bottom: -2rem;
     }
   }
 
@@ -404,7 +405,7 @@
 
     @include tablet {
       max-width: 11rem;
-      margin-left: 59%;
+      margin-left: 65%;
     }
   }
 }
@@ -484,10 +485,11 @@
   }
 
   &__item {
+    border-bottom: solid 0.15rem $Mercury;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
-    border-bottom: solid 0.15rem $Mercury;
+
   }
 
   &__content {

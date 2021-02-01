@@ -717,6 +717,7 @@ h2 {
 @media (min-width: 768px) {
   .conversation__labelTablet {
     display: unset;
+    margin-bottom: -2rem;
   }
 }
 
@@ -765,7 +766,7 @@ h2 {
 @media (min-width: 768px) {
   .conversation__button {
     max-width: 11rem;
-    margin-left: 59%;
+    margin-left: 65%;
   }
 }
 
@@ -850,11 +851,10 @@ h2 {
 }
 
 .comment__item {
+  border-bottom: solid 0.15rem #E1E1E1;
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flexr-bottom: solid 0.15rem #E1E1E1;
+  display: -ms-fle    justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .comment__content {
   padding-left: 1rem;
