@@ -43,6 +43,11 @@ shows.forEach((showObj) => {
   date.classList.add("show__date");
   date.innerText = showObj.date;
 
+  const dateDiv=document.createElement("div");
+  dateDiv.classList.add("show__dateDiv");
+  dateDiv.appendChild(dateLabel);
+  dateDiv.appendChild(date);
+
   //create venue label
   const venueLabel = document.createElement("h5");
   venueLabel.classList.add("show__labelV");
@@ -52,6 +57,11 @@ shows.forEach((showObj) => {
   venue.classList.add("show__venue");
   venue.innerText = showObj.venue;
 
+  const venueDiv=document.createElement("div");
+  venueDiv.classList.add("show__venueDiv");
+  venueDiv.appendChild(venueLabel);
+  venueDiv.appendChild(venue);
+
   //create location lable
   const locationLabel = document.createElement("h5");
   locationLabel.classList.add("show__labelL");
@@ -60,6 +70,11 @@ shows.forEach((showObj) => {
   const location = document.createElement("h6");
   location.classList.add("show__location");
   location.innerText = showObj.location;
+
+  const locationDiv=document.createElement("div");
+  locationDiv.classList.add("show__locationDiv");
+  locationDiv.appendChild(locationLabel);
+  locationDiv.appendChild(location);
 
   // creat button
   const myButton = document.createElement("button");
@@ -73,13 +88,13 @@ shows.forEach((showObj) => {
   const showItem = document.createElement("li");
   showItem.classList.add("show__item");
 
-  showItem.appendChild(dateLabel);
-  showItem.appendChild(date);
-  showItem.appendChild(venueLabel);
-  showItem.appendChild(venue);
-  showItem.appendChild(locationLabel);
-  showItem.appendChild(location);
+  
+  showItem.appendChild(dateDiv);
+ 
+  showItem.appendChild(venueDiv);
+ 
+  showItem.appendChild(locationDiv);
   showItem.appendChild(myButton);
-  showItem.appendChild(myLine);
+  
   showList.appendChild(showItem);
 });

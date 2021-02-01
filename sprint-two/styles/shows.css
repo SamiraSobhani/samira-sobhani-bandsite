@@ -234,12 +234,12 @@ h2 {
 }
 
 .active {
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
-  text-decoration: none;
   border-bottom: 0.3rem solid #FFFFFF;
   color: #FFFFFF;
-  width: 50%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
   text-align: center;
 }
 
@@ -250,6 +250,18 @@ h2 {
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 4px 0px #a3a2a2;
           box-shadow: 1px 1px 4px 0px #a3a2a2;
+}
+
+@media (min-width: 768px) {
+  .active {
+    margin-left: 5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .active {
+    margin-left: 3.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -273,6 +285,9 @@ h2 {
 @media (min-width: 768px) {
   .nav__list {
     padding-top: 1.9rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -303,6 +318,8 @@ h2 {
 .inactive {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+  text-decoration: none;
+  width: 50%;
   text-align: center;
 }
 
@@ -315,23 +332,10 @@ h2 {
           box-shadow: 1px 1px 4px 0px #a3a2a2;
 }
 
-@media (min-width: 768px) {
-  .inactive {
-    margin-left: 5rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .inactive {
-    margin-left: 3.5rem;
-  }
-}
-
 .banner {
-  background-image: url(../assets/Images/girl.jpg);
+  background-image: url(../assets/Images/show.jpg);
   background-size: cover;
   background-position: center;
-  width: 100%;
   height: 29.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -345,15 +349,42 @@ h2 {
           flex-direction: column;
 }
 
+@media (min-width: 768px) {
+  .banner {
+    height: 41.87rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .banner {
+    height: 41.87rem;
+  }
+}
+
 .banner__title {
   -ms-flex-item-align: start;
       align-self: flex-start;
   color: #FFFFFF;
   margin-top: 0;
-  padding-top: 3.7rem;
+  padding-top: 4rem;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
   text-shadow: 0rem 0.1rem 0.1rem black;
+}
+
+@media (min-width: 768px) {
+  .banner__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 6rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .banner__title {
+    padding-top: 10rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .banner__text {
@@ -364,36 +395,202 @@ h2 {
   font-size: 2.2rem;
   line-height: 3.1rem;
   margin-top: 0;
+  margin-bottom: 3.1rem;
+}
+
+@media (min-width: 768px) {
+  .banner__text {
+    width: 78%;
+    font-size: 3.75rem;
+    line-height: 5.2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .banner__text {
+    width: 42%;
+    margin-right: 0;
+  }
 }
 
 .banner__song {
   width: 90%;
   height: 20%;
-  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .banner__song {
+    max-width: 55%;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+  }
+}
+
+@media (min-width: 1440px) {
+  .banner__song {
+    width: 27.25rem;
+    height: 9.12rem;
+    margin-right: 0;
+    position: absolute;
+    top: 24.6rem;
+    right: 11rem;
+    margin-left: 3rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .show {
+    margin-right: 11.25rem;
+  }
 }
 
 .show__head {
-  padding-top: 0.9rem;
-  margin-bottom: 0.7rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .show__head {
+    font-size: 2.25rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .show__head {
+    display: inline-block;
+    padding-right: 6rem;
+  }
+}
+
+.show__labels {
+  display: none;
+  color: #AFAFAF;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding-top: 0.7rem;
+  padding-bottom: 0.4rem;
+}
+
+@media (min-width: 768px) {
+  .show__labels {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 72%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .show__labels {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 58%;
+    padding-bottom: 2.5rem;
+  }
 }
 
 .show__list {
   padding-left: 0;
+  margin-top: 0;
+}
+
+@media (min-width: 1440px) {
+  .show__list {
+    width: 50.25rem;
+    margin-top: -2rem;
+    margin-left: 17rem;
+  }
+}
+
+.show__item {
+  border-bottom: solid 0.1rem #E1E1E1;
+}
+
+@media (min-width: 768px) {
+  .show__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    justify-self: left;
+    margin-top: 1rem;
+  }
 }
 
 .show__labelD {
   color: #AFAFAF;
   font-weight: 500;
   font-size: 0.75rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
   margin-top: 1.4rem;
 }
 
+@media (min-width: 768px) {
+  .show__labelD {
+    display: none;
+  }
+}
+
 .show__date {
-  margin-top: 0.8rem;
+  margin-top: 0rem;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.show__label {
+  width: 35%;
+}
+
+@media (min-width: 1440px) {
+  .show__label {
+    width: 30%;
+    margin-left: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .show__dateDiv {
+    width: 28%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .show__dateDiv {
+    width: 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .show__venueDiv {
+    width: 27%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .show__venueDiv {
+    width: 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .show__locationDiv {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .show__locationDiv {
+    width: 25%;
+  }
 }
 
 .show__labelV {
@@ -402,6 +599,12 @@ h2 {
   font-size: 0.75rem;
   margin-top: 0;
   margin-bottom: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .show__labelV {
+    display: none;
+  }
 }
 
 .show__venue {
@@ -417,15 +620,22 @@ h2 {
   margin-bottom: 0;
 }
 
+@media (min-width: 768px) {
+  .show__labelL {
+    display: none;
+  }
+}
+
 .show__location {
   font-size: 0.76rem;
   font-weight: 500;
   margin-top: 0.8rem;
+  margin-bottom: 2rem;
 }
 
 .show__button {
   background-color: #323232;
-  padding: 1rem;
+  padding: 1.03rem;
   color: #FFFFFF;
   width: 100%;
   border-radius: 0.2rem;
@@ -433,8 +643,19 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.show__divider {
-  border-bottom: solid 0.15rem #E1E1E1;
+@media (min-width: 768px) {
+  .show__button {
+    width: 30%;
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .show__button {
+    width: 10rem;
+    height: 3rem;
+    margin-left: 0;
+  }
 }
 
 .footer {

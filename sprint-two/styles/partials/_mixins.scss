@@ -1,8 +1,4 @@
-@mixin between {
-  @media (min-width: $between) {
-    @content
-  }
-};
+
 
 @mixin tablet {
   @media (min-width: $tablet) {

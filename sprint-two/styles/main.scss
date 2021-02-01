@@ -136,12 +136,12 @@
 
 .about {
   &__img {
-    width: 18rem;
+    display: flex;
+    min-width: 18rem;
     height: auto;
-    @include between {
-      width: 100%;
-      object-fit: cover;
-    }
+    max-width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
     @include tablet {
       width: 45rem;
       height: 22.625rem;
@@ -282,13 +282,15 @@
     padding-bottom: 1.3rem;
     line-height: 0;
     @include tablet {
+      max-width: 880px;
+      margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
     @include desk {
       padding-top: 1.5rem;
-      width: 1080px; //344px*3+24px*2
+      max-width: 1080px; //344px*3+24px*2
       padding-bottom: 1rem;
     }
   }
@@ -311,10 +313,12 @@
     }
   }
 }
+
 // *****************comments******************
 .form__container {
   display: inline-block;
 }
+
 .conversation__header {
   padding-top: 1rem;
   @include tablet {
@@ -328,45 +332,53 @@
     max-width: 70%;
     margin: 0 auto;
   }
-
+  @include desk{
+    max-width: 55%;
+    margin: 0 auto;
+  }
   &__img {
     margin-top: 2rem;
     min-width: fit-content;
   }
+
   &__photo {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
   }
+
   &__form {
     display: flex;
     justify-content: space-between;
     border-bottom: solid 0.05rem $silver;
-    // @include tablet {
-    //   max-width: 70%;
-    //   margin: 0 auto;
-    // }
   }
+
   &__content {
-    min-width: 80%;
+    min-width: 75%;
     width: 78%;
     display: flex;
     flex-direction: column;
     margin-left: 0.7rem;
+    @include tablet {
+      min-width: 85%;
+    }
   }
+
   &__labelTablet {
     @include label;
     display: none;
     @include tablet {
-      visibility: visible;
+      display: unset;
     }
   }
+
   &__labelMob {
     @include label;
     @include tablet {
       visibility: hidden;
     }
   }
+
   &__nameLabel {
     margin-top: 0.5rem;
     @include label;
@@ -374,49 +386,57 @@
 
   &__button {
     margin-left: 0;
+    max-width: 14.43rem;
     width: 100%;
-    max-width: 13.43rem;
-    justify-self: right;
     background-color: $black;
     color: $white;
+    font-size: 0.87rem;
+    font-weight: 500;
     padding: 1rem;
     border-style: none;
     border-radius: 0.3rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
+
     &:focus {
       outline: none;
     }
+
     @include tablet {
-      
+      max-width: 11rem;
+      margin-left: 59%;
     }
   }
 }
 
 .conversation {
+
   &__name {
     padding: 1rem;
     color: $black;
     background-color: $Alabaster;
     border-radius: 0.25rem;
     border-color: $Mercury;
+
     &:focus {
       outline-color: $black;
     }
   }
+
   &__date {
     color: $silver;
   }
+
   &__comment {
     padding: 1rem 1rem 3rem 1rem;
 
     color: $black;
     background-color: $Alabaster;
     border-radius: 0.25rem;
-
     border-color: $Mercury;
     font-size: 0.75rem;
     font-weight: 500;
+
     &:focus {
       outline-color: $black;
     }
@@ -427,6 +447,7 @@
   &__list {
     padding-left: 0;
   }
+
   &__image {
     border-radius: 50%;
     width: 3rem;
@@ -434,21 +455,28 @@
     background-color: $Mercury;
     margin-top: 1rem;
   }
+
   &__name {
     font-size: 0.87rem;
     margin-bottom: 0.7rem;
   }
+
   &__date {
     color: $silver;
     font-size: 0.9rem;
   }
 }
+
 .comment {
   &__imageDiv {
     display: flex;
     width: 70%;
     max-width: fit-content;
+    @include desk{
+      margin-right: 0.5rem;
+    }
   }
+
   &__head {
     display: flex;
     justify-content: space-between;
@@ -461,9 +489,12 @@
     margin-bottom: 1rem;
     border-bottom: solid 0.15rem $Mercury;
   }
+
   &__content {
     padding-left: 1rem;
+    width: 95%;
   }
+
   &__text {
     margin-top: 0;
     font-size: 0.85rem;
@@ -471,6 +502,7 @@
     line-height: 1.4rem;
   }
 }
+
 // *****************footer********************
 
 .footer {
@@ -505,6 +537,7 @@
       position: relative;
     }
   }
+
   &__icon {
     @include desk {
       padding-right: 1rem;
@@ -567,6 +600,7 @@
     margin-top: 1.87rem;
   }
 }
+
 .contactinfo {
   font-size: 0.87rem;
   font-weight: normal;

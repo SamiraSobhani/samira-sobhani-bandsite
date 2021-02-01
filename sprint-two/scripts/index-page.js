@@ -21,7 +21,7 @@ const comments = [
 ];
 const commentList = document.querySelector(".comment__list");
 
-function appendComment() {
+function displayComment() {
   commentList.innerHTML = "";
 
   comments.forEach((commentOBJ) => {
@@ -61,19 +61,17 @@ function appendComment() {
     commentContent.appendChild(commentHead);
     commentContent.appendChild(commentText);
 
-
     // create commentItem
     const commentItem = document.createElement("li");
     commentItem.classList.add("comment__item");
 
     commentItem.appendChild(imageDiv);
     commentItem.appendChild(commentContent);
-    
     commentList.appendChild(commentItem);
   });
 }
 
-appendComment();
+displayComment();
 
 function handleFormSubmit(event) {
   event.preventDefault();
@@ -87,7 +85,7 @@ function handleFormSubmit(event) {
 
   if (commentName !== "" && commentText !== "") {
     addComment(commentName, commentDate, commentText);
-    appendComment();
+    displayComment();
     event.target.reset();
   } else {
     alert("please enter a name and description");
@@ -98,7 +96,7 @@ const conversation = document.querySelector(".conversation__form");
 conversation.addEventListener("submit", handleFormSubmit);
 
 function addComment(name, date, comment) {
-  comments.push({
+  comments.unshift({
     name: name,
     date: date,
     comment: comment,
