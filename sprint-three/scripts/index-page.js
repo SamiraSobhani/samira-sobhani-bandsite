@@ -1,37 +1,32 @@
 "use strict";
-const comments = [
-  {
-    name: "Micheal Lyons",
-    date: "12/18/2018",
-    comment:
-      "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.",
-  },
-  {
-    name: "Gary Wong",
-    date: "12/12/2018",
-    comment:
-      "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-  },
-  {
-    name: "Theodore Duncan",
-    date: "11/15/2018",
-    comment:
-      "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-  },
-];
+
 const commentList = document.querySelector(".comment__list");
+const myKey = "53870676-ced4-4dbd-9e31-675986686347";
+const API = "https://project-1-api.herokuapp.com";
 
 function displayComment() {
   commentList.innerHTML = "";
+  axios
+    .get(`${API}/comments?api_key=${myKey}`)
 
-  comments.forEach((commentOBJ) => {
-    // create image for comments
+    .then(function (response) {
+      appendToDOM(response.data);
+    })
+
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+function appendToDOM(response) {
+  const sortedComments = response.sort((a, b) => b.timestamp - a.timestamp);
+
+  sortedComments.forEach((commentOBJ) => {
+    // create image for response
     const imageDiv = document.createElement("div");
     imageDiv.classList.add("comment__imageDiv");
-
     const image = document.createElement("img");
     image.classList.add("comment__image");
-
     imageDiv.appendChild(image);
 
     // create and fill out the name
@@ -42,7 +37,16 @@ function displayComment() {
     // create and fill out the date
     const date = document.createElement("span");
     date.classList.add("comment__date");
-    date.innerText = commentOBJ.date;
+
+    const myDate = new Date(commentOBJ.timestamp);
+    const formatedDate =
+      myDate.getDate() +
+      "/" +
+      (myDate.getMonth() + 1) +
+      "/" +
+      myDate.getFullYear();
+
+    date.innerText = formatedDate;
 
     // create div for name+date=header
     const commentHead = document.createElement("div");
@@ -55,12 +59,28 @@ function displayComment() {
     commentText.classList.add("comment__text");
     commentText.innerText = commentOBJ.comment;
 
+    // create hidden commentId element
+    const commentId = document.createElement("div");
+    commentId.classList.add("comment__id");
+    commentId.setAttribute("name", "commentId");
+    commentId.innerText = commentOBJ.id;
+
+    // create delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("comment__delete");
+    deleteButton.setAttribute("type", "click");
+    deleteButton.innerText = "Delete";
+    deleteButton.addEventListener("click", deleteHandler)
+   
+
+
     // create div for header+commentText= commentContenet
     const commentContent = document.createElement("div");
     commentContent.classList.add("comment__content");
     commentContent.appendChild(commentHead);
     commentContent.appendChild(commentText);
-
+    commentContent.appendChild(deleteButton);
+    commentContent.appendChild(commentId);
     // create commentItem
     const commentItem = document.createElement("li");
     commentItem.classList.add("comment__item");
@@ -95,10 +115,37 @@ function handleFormSubmit(event) {
 const conversation = document.querySelector(".conversation__form");
 conversation.addEventListener("submit", handleFormSubmit);
 
-function addComment(name, date, comment) {
-  comments.unshift({
-    name: name,
-    date: date,
-    comment: comment,
-  });
+function addComment(commentName, commentDate, commentText) {
+  axios
+    .post(`${API}/comments?api_key=${myKey}`, {
+      name: commentName,
+      comment: commentText,
+    })
+    .then(displayComment)
+
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+function deleteHandler(event) {
+  event.preventDefault();
+  const selectedId = event.target.commentId.value;
+  console.log(selectedId);
+  if (selectedId !== "") {
+    deleteComment(selectedId);
+    displayComment();
+  } else {
+    alert("comment has been deleted");
+  }
+}
+
+function deleteComment(selectedId) {
+  const id = selectedId;
+  axios
+    .delete(`${API}/comments/${id}?api_key=${myKey}`)
+    .then(displayComment)
+    .catch(function (error) {
+      console.log(error);
+    });
 }

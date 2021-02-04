@@ -332,7 +332,7 @@
     max-width: 70%;
     margin: 0 auto;
   }
-  @include desk{
+  @include desk {
     max-width: 55%;
     margin: 0 auto;
   }
@@ -411,7 +411,6 @@
 }
 
 .conversation {
-
   &__name {
     padding: 1rem;
     color: $black;
@@ -455,6 +454,7 @@
     height: 3rem;
     background-color: $Mercury;
     margin-top: 1rem;
+    outline: none;
   }
 
   &__name {
@@ -473,7 +473,7 @@
     display: flex;
     width: 70%;
     max-width: fit-content;
-    @include desk{
+    @include desk {
       margin-right: 0.5rem;
     }
   }
@@ -489,7 +489,6 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
-
   }
 
   &__content {
@@ -502,6 +501,18 @@
     font-size: 0.85rem;
     font-weight: 500;
     line-height: 1.4rem;
+  }
+  &__delete {
+    background-color: $black;
+    color: $white;
+    height: 1.2rem;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    border: none;
+    margin-bottom: 0.5rem;
+  }
+  &__id {
+    display: none;
   }
 }
 

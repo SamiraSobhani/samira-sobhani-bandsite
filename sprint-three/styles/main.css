@@ -810,6 +810,7 @@ h2 {
   height: 3rem;
   background-color: #E1E1E1;
   margin-top: 1rem;
+  outline: none;
 }
 
 .comment__name {
@@ -871,6 +872,20 @@ h2 {
   font-size: 0.85rem;
   font-weight: 500;
   line-height: 1.4rem;
+}
+
+.comment__delete {
+  background-color: #323232;
+  color: #FFFFFF;
+  height: 1.2rem;
+  font-size: 0.8rem;
+  border-radius: 0.3rem;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.comment__id {
+  display: none;
 }
 
 .footer {
