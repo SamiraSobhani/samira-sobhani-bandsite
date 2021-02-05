@@ -5,7 +5,6 @@ const myKey = "53870676-ced4-4dbd-9e31-675986686347";
 const API = "https://project-1-api.herokuapp.com";
 
 function displayComment() {
-  commentList.innerHTML = "";
   axios
     .get(`${API}/comments?api_key=${myKey}`)
 
@@ -20,7 +19,7 @@ function displayComment() {
 
 function appendToDOM(response) {
   const sortedComments = response.sort((a, b) => b.timestamp - a.timestamp);
-
+  commentList.innerHTML = "";
   sortedComments.forEach((commentOBJ) => {
     // create image for response
     const imageDiv = document.createElement("div");
@@ -105,7 +104,6 @@ function handleFormSubmit(event) {
 
   if (commentName !== "" && commentText !== "") {
     addComment(commentName, commentDate, commentText);
-    displayComment();
     event.target.reset();
   } else {
     alert("please enter a name and description");
@@ -131,7 +129,6 @@ function addComment(commentName, commentDate, commentText) {
 function deleteHandler(id) {
   if (id !== "") {
     deleteComment(id);
-    displayComment();
   } else {
     alert("comment has been deleted");
   }
@@ -152,7 +149,7 @@ function addLike(selectedId) {
   axios
     .put(`${API}/comments/${id}/like?api_key=${myKey}`)
     .then(displayComment)
-      
+
     .catch(function (error) {
       console.log(error);
     });
