@@ -551,7 +551,14 @@ h2 {
 }
 
 .show__dateLabel {
-  width: 20%;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .show__dateLabel {
+    display: unset;
+    width: 21%;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -561,7 +568,14 @@ h2 {
 }
 
 .show__venueLabel {
-  width: 28%;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .show__venueLabel {
+    display: unset;
+    width: 27%;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -571,7 +585,14 @@ h2 {
 }
 
 .show__locationLabel {
-  width: 35%;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .show__locationLabel {
+    display: unset;
+    width: 27%;
+  }
 }
 
 @media (min-width: 1440px) {

@@ -245,19 +245,31 @@
 }
 .show {
   &__dateLabel {
-    width: 20%;
+    display: none;
+    @include tablet {
+      display: unset;
+      width: 21%;
+    }
     @include desk {
       width: 27%;
     }
   }
   &__venueLabel {
-    width: 28%;
+    display: none;
+    @include tablet {
+      display: unset;
+      width: 27%;
+    }
     @include desk {
       width: 27%;
     }
   }
   &__locationLabel {
-    width: 35%;
+    display: none;
+    @include tablet {
+      display: unset;
+      width: 27%;
+    }
     @include desk {
       width: 30%;
     }
