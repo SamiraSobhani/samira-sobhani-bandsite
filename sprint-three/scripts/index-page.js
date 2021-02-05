@@ -25,7 +25,7 @@ function appendToDOM(response) {
     // create image for response
     const imageDiv = document.createElement("div");
     imageDiv.classList.add("comment__imageDiv");
-    const image = document.createElement("img");
+    const image = document.createElement("div");
     image.classList.add("comment__image");
     imageDiv.appendChild(image);
 
@@ -59,20 +59,20 @@ function appendToDOM(response) {
     commentText.classList.add("comment__text");
     commentText.innerText = commentOBJ.comment;
 
-    // create hidden commentId element
-    const commentId = document.createElement("div");
-    commentId.classList.add("comment__id");
-    commentId.setAttribute("name", "commentId");
-    commentId.innerText = commentOBJ.id;
-
     // create delete button
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("comment__delete");
     deleteButton.setAttribute("type", "click");
     deleteButton.innerText = "Delete";
-    deleteButton.addEventListener("click", deleteHandler)
-   
+    deleteButton.addEventListener("click", () => deleteHandler(commentOBJ.id));
 
+    // create like button
+    const currentLikes = commentOBJ.likes;
+    const likeButton = document.createElement("button");
+    likeButton.classList.add("comment__like");
+    likeButton.setAttribute("type", "click");
+    likeButton.innerText = "💗" + currentLikes;
+    likeButton.addEventListener("click", () => addLike(commentOBJ.id));
 
     // create div for header+commentText= commentContenet
     const commentContent = document.createElement("div");
@@ -80,7 +80,7 @@ function appendToDOM(response) {
     commentContent.appendChild(commentHead);
     commentContent.appendChild(commentText);
     commentContent.appendChild(deleteButton);
-    commentContent.appendChild(commentId);
+    commentContent.appendChild(likeButton);
     // create commentItem
     const commentItem = document.createElement("li");
     commentItem.classList.add("comment__item");
@@ -128,12 +128,9 @@ function addComment(commentName, commentDate, commentText) {
     });
 }
 
-function deleteHandler(event) {
-  event.preventDefault();
-  const selectedId = event.target.commentId.value;
-  console.log(selectedId);
-  if (selectedId !== "") {
-    deleteComment(selectedId);
+function deleteHandler(id) {
+  if (id !== "") {
+    deleteComment(id);
     displayComment();
   } else {
     alert("comment has been deleted");
@@ -145,6 +142,17 @@ function deleteComment(selectedId) {
   axios
     .delete(`${API}/comments/${id}?api_key=${myKey}`)
     .then(displayComment)
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+function addLike(selectedId) {
+  const id = selectedId;
+  axios
+    .put(`${API}/comments/${id}/like?api_key=${myKey}`)
+    .then(displayComment)
+      
     .catch(function (error) {
       console.log(error);
     });

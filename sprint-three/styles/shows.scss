@@ -193,20 +193,25 @@
   }
   &__labels {
     display: none;
-    @include label;
+    display: flex;
     @include tablet {
-      display: flex;
-      width: 72%;
+      @include label;
+      margin: 0 auto;
+      max-width: 50.25rem;
     }
     @include desk {
       display: inline-flex;
-      width: 58%;
+      margin: 0 auto;
+      width: 50.25rem;
+      // width: 58%;
       padding-bottom: 2.5rem;
+      margin-left: 3.2rem;
     }
   }
   &__list {
     padding-left: 0;
-    margin-top: 0;
+    max-width: 50.25rem;
+    margin: 0 auto;
     @include desk {
       width: 50.25rem;
       margin-top: -2rem;
@@ -239,16 +244,27 @@
   }
 }
 .show {
-  &__label {
+  &__dateLabel {
+    width: 20%;
+    @include desk {
+      width: 27%;
+    }
+  }
+  &__venueLabel {
+    width: 28%;
+    @include desk {
+      width: 27%;
+    }
+  }
+  &__locationLabel {
     width: 35%;
     @include desk {
       width: 30%;
-      margin-left: 3.5rem;
     }
   }
   &__dateDiv {
     @include tablet {
-      width: 28%;
+      width: 19%;
     }
     @include desk {
       width: 25%;
@@ -264,7 +280,7 @@
   }
   &__locationDiv {
     @include tablet {
-      width: 20%;
+      width: 27%;
     }
     @include desk {
       width: 25%;
@@ -308,8 +324,8 @@
     border-style: none;
     margin-bottom: 1rem;
     @include tablet {
-      width: 30%;
-      margin-left: 2rem;
+      width: 23%;
+      // margin-left: 2rem;
     }
     @include desk {
       width: 10rem;
@@ -317,7 +333,6 @@
       margin-left: 0;
     }
   }
-
 }
 // *****************footer********************
 

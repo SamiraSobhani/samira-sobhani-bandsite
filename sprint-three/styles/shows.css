@@ -466,19 +466,20 @@ h2 {
 
 .show__labels {
   display: none;
-  color: #AFAFAF;
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding-top: 0.7rem;
-  padding-bottom: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 768px) {
   .show__labels {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 72%;
+    color: #AFAFAF;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding-top: 0.7rem;
+    padding-bottom: 0.4rem;
+    margin: 0 auto;
+    max-width: 50.25rem;
   }
 }
 
@@ -487,14 +488,17 @@ h2 {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    width: 58%;
+    margin: 0 auto;
+    width: 50.25rem;
     padding-bottom: 2.5rem;
+    margin-left: 3.2rem;
   }
 }
 
 .show__list {
   padding-left: 0;
-  margin-top: 0;
+  max-width: 50.25rem;
+  margin: 0 auto;
 }
 
 @media (min-width: 1440px) {
@@ -546,20 +550,39 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-.show__label {
+.show__dateLabel {
+  width: 20%;
+}
+
+@media (min-width: 1440px) {
+  .show__dateLabel {
+    width: 27%;
+  }
+}
+
+.show__venueLabel {
+  width: 28%;
+}
+
+@media (min-width: 1440px) {
+  .show__venueLabel {
+    width: 27%;
+  }
+}
+
+.show__locationLabel {
   width: 35%;
 }
 
 @media (min-width: 1440px) {
-  .show__label {
+  .show__locationLabel {
     width: 30%;
-    margin-left: 3.5rem;
   }
 }
 
 @media (min-width: 768px) {
   .show__dateDiv {
-    width: 28%;
+    width: 19%;
   }
 }
 
@@ -583,7 +606,7 @@ h2 {
 
 @media (min-width: 768px) {
   .show__locationDiv {
-    width: 20%;
+    width: 27%;
   }
 }
 
@@ -645,8 +668,7 @@ h2 {
 
 @media (min-width: 768px) {
   .show__button {
-    width: 30%;
-    margin-left: 2rem;
+    width: 23%;
   }
 }
 
